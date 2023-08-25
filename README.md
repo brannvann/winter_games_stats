@@ -16,8 +16,7 @@
 
 ## По лыжным гонкам
     
-    Исходные данные    
-    
+Исходные данные    
     https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_1956_Winter_Olympics
     ...
     https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_2022_Winter_Olympics
