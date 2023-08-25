@@ -12,7 +12,9 @@ safe_headers = {
 }
 all_datafile = 'winter_data.json'
 ski_datafile = 'ski_data.json'
+rus_team = ['Soviet Union', 'Unified Team', 'Russia', 'Olympic Athletes from Russia', 'ROC']
 
+# медали зимних олимпийских игр (целиком или по видам спорта)
 def process_data(yearurl, table_index_function, last_year:int = 2023):
     medals = {}
     years = [y for y in range(1956, 1993, 4)] + [y for y in range(1994, last_year, 4)]
@@ -52,22 +54,30 @@ def read_medals_data(filename:str):
         medals = None
     return medals
 
-def draw_medals_plot(medals, title:str):
+# график медалей - общее количество + страна1 + (опционально страна2)
+def draw_medals_plot(medals, title:str, label1 = 'СССР,РФ', country1=rus_team, label2=None, country2=None, color2='LightBlue'):
     labels = []
-    total, rus = [], []
+    total, nation1, nation2 = [], [], []
     for year, data in medals.items():
         labels.append(year)
         total.append(data['total'])
-        rus_medals = [ c[1] for c in data['nations'] if c[0] in ['Soviet Union', 'Unified Team', 'Russia', 'Olympic Athletes from Russia', 'ROC'] ]
-        rus.append(rus_medals[0] if rus_medals else 0 )
+        nation1_medals = [ c[1] for c in data['nations'] if c[0] in country1 ]
+        nation1.append(nation1_medals[0] if nation1_medals else 0 )
+        if country2:
+            nation2_medals = [ c[1] for c in data['nations'] if c[0] in country2 ]
+            nation2.append(nation2_medals[0] if nation2_medals else 0 )
+        pass
     pass
     _,m = plt.subplots()
     m.set_ylabel('Количество медалей', fontsize=16)
     m.set_title(title, fontsize=16)
     m.bar(labels, total, label='Все страны', color='Navy')
-    m.bar(labels, rus, label='СССР, РФ', color='Red')
+    m.bar(labels, nation1, label=label1, color='Red')
+    if label2 and nation2:
+        m.bar(labels, nation2, label=label2, bottom = nation1, color=color2)
+    pass
     m.legend(fontsize=16)
-    plt.xticks(range(len(labels)), labels, rotation=60)
+    plt.xticks(range(len(labels)), labels, rotation=50)
     plt.show()
     return
 
@@ -87,7 +97,11 @@ def main(args):
             json.dump(ski_medals, ofs)
     pass
     draw_medals_plot(all_medals, 'Медали зимних Олимпийских игр')
-    draw_medals_plot(ski_medals, 'Медали зимних Олимпийских игр в лыжном спорте')
+    draw_medals_plot(all_medals, 'Медали зимних Олимпийских игр', 'СССР,РФ', rus_team, 'Норвегия', ['Norway'])
+    draw_medals_plot(all_medals, 'Медали зимних Олимпийских игр', 'СССР,РФ', rus_team, 'США', ['United States'], color2='Orchid')
+    draw_medals_plot(ski_medals, 'Медали зимних Олимпийских игр в лыжном спорте', 'СССР,РФ', rus_team)
+    draw_medals_plot(ski_medals, 'Медали зимних Олимпийских игр в лыжном спорте', 'СССР,РФ', rus_team, 'Норвегия', ['Norway'])
+    draw_medals_plot(ski_medals, 'Медали зимних Олимпийских игр в лыжном спорте', 'СССР,РФ', rus_team, 'Швеция', ['Sweden'], color2='Lime')
     return 0
 
 if __name__ == '__main__':
