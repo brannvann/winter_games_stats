@@ -4,9 +4,9 @@
 
 Исходные данные    
     
-    (https://en.wikipedia.org/wiki/1956_Winter_Olympics_medal_table)
+    https://en.wikipedia.org/wiki/1956_Winter_Olympics_medal_table
     ...
-    [https://en.wikipedia.org/wiki/2022_Winter_Olympics_medal_table](https://en.wikipedia.org/wiki/2022_Winter_Olympics_medal_table)
+    https://en.wikipedia.org/wiki/2022_Winter_Olympics_medal_table
 
 ![](all_medals_rf.png)
 
@@ -19,9 +19,9 @@
     
     Исходные данные    
     
-    [https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_1956_Winter_Olympics](https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_1956_Winter_Olympics)
+    https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_1956_Winter_Olympics
     ...
-    [https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_2022_Winter_Olympics](https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_2022_Winter_Olympics)
+    https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_2022_Winter_Olympics
 
 ![](ski_medals_rf.png)
 
