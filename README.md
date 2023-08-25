@@ -7,11 +7,11 @@
     ...
     https://en.wikipedia.org/wiki/2022_Winter_Olympics_medal_table
 
-![](all_medals_rf.png)
+![](pics/all_medals_rf.png)
 
-![](all_medals_rf_norway.png)
+![](pics/all_medals_rf_norway.png)
 
-![](all_medals_rf_usa.png)
+![](pics/all_medals_rf_usa.png)
 
 
 ## По лыжным гонкам
@@ -21,8 +21,8 @@
     ...
     https://en.wikipedia.org/wiki/Cross-country_skiing_at_the_2022_Winter_Olympics
 
-![](ski_medals_rf.png)
+![](pics/ski_medals_rf.png)
 
-![](ski_medals_rf_norway.png)
+![](pics/ski_medals_rf_norway.png)
 
-![](ski_medals_rf_sweden.png)
+![](pics/ski_medals_rf_sweden.png)
