@@ -1,9 +1,11 @@
 # статистика медалей РФ-СССР на зимних олимпиадах
 
-##Общие медальные таблицы:
+##О бщие медальные таблицы:
 Исходные данные    
     https://en.wikipedia.org/wiki/1956_Winter_Olympics_medal_table
+    
     ...
+    
     https://en.wikipedia.org/wiki/2022_Winter_Olympics_medal_table
 
 ![](all_medals_rf.png)
